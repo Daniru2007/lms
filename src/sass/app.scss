@@ -1,0 +1,42 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.nav-bar {
+    display: grid;
+    grid-template-columns: 120px auto 120px;
+    padding: 20px;
+    > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    > div > a {
+        font-size: 16px;
+        text-decoration: none;
+        padding: 5px 10px;
+        transition: all 500ms;
+    }
+    &.light {
+        background-color: #ffffff;
+        transition: all 500ms;
+        > div > a {
+            color: #212121;
+            &:hover {
+                color: #c0c0c0;
+            }
+        }
+    }
+    &.dark {
+        background-color: #00111c;
+        color: #ddf1ff;
+        transition: all 500ms;
+        > div > a {
+            color: #ddf1ff;
+            &:hover {
+                color: #ddf1ff7e;
+            }
+        }
+    }
+}
