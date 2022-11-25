@@ -20,6 +20,7 @@ body {
     }
 }
 .nav-bar {
+    z-index: 1000;
     display: grid;
     position: fixed;
     grid-template-columns: 150px auto 30px 120px;
@@ -67,20 +68,78 @@ body {
     width: 30px;
     border-radius: 100%;
     transition: all 500ms;
+    cursor: pointer;
     &.light {
         background-color: #161616;
+        &:hover {
+            background-color: #3b3b3b;
+        }
     }
     &.dark {
         background-color: #b1b1b1;
+        &:hover {
+            background-color: #a8a8a8cc;
+        }
     }
 }
 
 .home {
     height: 100vh;
+    position: relative;
     &.dark {
         background-color: #001a2c;
     }
     &.light {
         background-color: #b1b1b1;
+    }
+    > .blur-box {
+        height: 100%;
+        display: grid;
+        grid-template-columns: auto auto;
+        backdrop-filter: blur(15px);
+        &.light {
+            background-color: #ffffff5e;
+            transition: all 500ms;
+        }
+        &.dark {
+            background-color: #00111ccb;
+            color: #ddf1ff;
+            transition: all 500ms;
+        }
+        > div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 50px;
+            height: 100%;
+            width: 100%;
+            > h1 {
+                font-size: 40px;
+            }
+        }
+    }
+}
+
+.ellipse {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    width: 150px;
+    &.dark > path {
+        fill: #b1b1b1;
+    }
+    &.light > path {
+        fill: #001a2c;
+    }
+}
+.lines {
+    position: absolute;
+    top: 20%;
+    left: 0%;
+    &.dark > line {
+        stroke: #b1b1b1;
+    }
+    &.light > line {
+        stroke: #001a2c;
     }
 }
