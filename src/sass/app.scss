@@ -2,11 +2,31 @@
     padding: 0px;
     margin: 0px;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+    &.light {
+        color: #212121;
+    }
+    &.dark {
+        color: #ddf1ff;
+    }
+}
+
+body {
+    &.light {
+        background-color: #b1b1b1;
+    }
+    &.dark {
+        background-color: #001a2c;
+    }
 }
 .nav-bar {
     display: grid;
-    grid-template-columns: 120px auto 120px;
+    position: fixed;
+    grid-template-columns: 150px auto 30px 120px;
     padding: 20px;
+    width: 98vw;
+
+    backdrop-filter: blur(10px);
     > div {
         display: flex;
         justify-content: center;
@@ -19,8 +39,9 @@
         transition: all 500ms;
     }
     &.light {
-        background-color: #ffffff;
+        background-color: #ffffff5e;
         transition: all 500ms;
+        backdrop-filter: blur(10px);
         > div > a {
             color: #212121;
             &:hover {
@@ -29,7 +50,7 @@
         }
     }
     &.dark {
-        background-color: #00111c;
+        background-color: #00111ccb;
         color: #ddf1ff;
         transition: all 500ms;
         > div > a {
@@ -38,5 +59,28 @@
                 color: #ddf1ff7e;
             }
         }
+    }
+}
+
+.change-theme {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    transition: all 500ms;
+    &.light {
+        background-color: #161616;
+    }
+    &.dark {
+        background-color: #b1b1b1;
+    }
+}
+
+.home {
+    height: 100vh;
+    &.dark {
+        background-color: #001a2c;
+    }
+    &.light {
+        background-color: #b1b1b1;
     }
 }
